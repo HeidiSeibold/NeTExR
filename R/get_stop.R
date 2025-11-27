@@ -9,11 +9,14 @@
 #' @examples
 #' bus_371 <- xml2::read_xml(netexr_example("NX-PI-01_DE_NAP_LINE_mvv_d-REGBU-85707123_20251117.xml"))
 #'
-#' ssp <- xml_find_all(
+#' ssp <- xml2::xml_find_all(
 #'   bus_371,
 #'   './/d1:ScheduledStopPoint[d1:Name = "Baiernrain"]',
-#'   ns = xml_ns(bus_371)
+#'   ns = xml2::xml_ns(bus_371)
 #' )
+#'
+#' xml2::xml_name(ssp[[1]])
+#'
 #' extract_one_stop(ssp[[1]])
 #' extract_one_stop(ssp[[2]])
 #'
